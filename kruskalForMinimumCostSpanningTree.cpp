@@ -52,6 +52,7 @@ int kruskalMst(int n){
 }
 
 int main(){
+    freopen("in.txt","r",stdin);
     int n,m;
     printf("Give number of node and edge: ");
     scanf("%d %d",&n,&m);
