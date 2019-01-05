@@ -1,27 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-stack<char>perm;
+vector<char>perm;
 bool chose[100]={false};
 string a = "012";
 
 void gen(){
     if(perm.size()==a.length()){
-        stack<char>p(perm);
-        while(!p.empty()){
-            cout<<p.top();
-            p.pop();
-        }
+        vector<char>p(perm);
+        for(int i=0;i<a.length();i++) cout<<perm[i];
         cout<<endl;
         return;
     }
     for(int i=0;i<a.length();i++){
         if(chose[i]) continue;
         chose[i]=true;
-        perm.push(a[i]);
+        perm.push_back(a[i]);
         gen();
         chose[i]=false;
-        perm.pop();
+        perm.pop_back();
     }
 }
 
