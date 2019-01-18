@@ -18,6 +18,10 @@ int bellmanFord(edge edges[]){
         for(int m=0;m<e;m++)
             distance[edges[m].v]=min(distance[edges[m].v],distance[edges[m].u]+edges[m].w);
 
+    for(int m=0;m<e;m++)
+        if(distance[edges[m].u]+edges[m].w <  distance[edges[m].v])
+            return -INF;
+
     return distance[destination];
 }
 
@@ -33,6 +37,9 @@ int main(){
     printf("Give the source and destination node: ");
     scanf("%d %d",&source,&destination);
 
-    printf("Shortest distance from %d to %d is %d\n",source,destination,bellmanFord(edges));
+    int shortestPath = bellmanFord(edges);
+    if(shortestPath==-INF) printf("Negative Cycle Detected.\n");
+    else printf("Shortest distance from %d to %d is %d\n",source,destination,shortestPath);
+
     return 0;
 }
