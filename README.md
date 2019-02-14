@@ -1,11 +1,11 @@
 # Algorithm_Design #
 ## Description ##
 This is a data structure and algorithm made by myself. Basically all codes are design as they can be used in competitive programming.
-But feel free for using this library.
-    -> Implementation of different essential algorithm and their supporting non build-in data structure.
-    -> Generally there stay some essential and well know algorithm whose we use our general 'software engineering'.
-    -> Those algorithm are mostly suitable for "Competative programming".
-    -> This can be used as a supporting role of university "Algorithm Design" course.
+But feel free for using this library.</br>
+Implementation of different essential algorithm and their supporting non build-in data structure.</br>
+Generally there stay some essential and well know algorithm whose we use our general 'software engineering'.</br>
+Those algorithm are mostly suitable for "Competative programming".</br>
+This can be used as a supporting role of university "Algorithm Design" course.
 </br>
 ## Content Pattern ##
 1. Basic data structure
