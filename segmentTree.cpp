@@ -4,7 +4,7 @@ using namespace std;
 const int MAX = 100005;
 int n, arr[MAX], tree[MAX*4];
 
-void init(int node, int beg, int endd) {
+void buildTree(int node, int beg, int endd) {
     if(beg == endd) {
         tree[node] = arr[beg];
         return;
@@ -14,8 +14,24 @@ void init(int node, int beg, int endd) {
     int right = node*2+1;
     int mid = (beg+endd)/2;
 
-    init(left, beg, mid);
-    init(right, mid+1, endd);
+    buildTree(left, beg, mid);
+    buildTree(right, mid+1, endd);
+
+    tree[node] = min(tree[left], tree[right]);
+}
+
+void update(int node, int beg, int endd, int pos, int y) {
+    if(beg == endd) {
+        tree[node] =+ y;
+        return;
+    }
+
+    int left = node*2;
+    int right = node*2+1;
+    int mid = (beg+endd)/2;
+
+    if(pos<=mid) update(left, beg, mid,pos,y);
+    else update(right, mid+1, endd,pos,y);
 
     tree[node] = min(tree[left], tree[right]);
 }
