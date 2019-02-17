@@ -50,6 +50,18 @@ int query(int node, int beg, int endd, int x, int y) {
     return min(l, r);
 }
 
+/// k-th query added
+int kthQuery(int aod,int start,int finish,int k){
+    if(start==finish) return start;
+
+    int left = nod*2;
+    int right = nod*2+1;
+    int mid(left+right)/2;
+
+    if(k<=tree[left]) return kthQuery(left,start,mid,k);
+    else return kthQuery(right,mid+1,finish,k-tree[nod]);
+}
+
 int main() {
     int test, kase=1, q, x, y;
 
