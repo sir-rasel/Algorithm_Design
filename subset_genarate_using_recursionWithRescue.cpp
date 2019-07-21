@@ -1,22 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-queue<char>myQueue;
+vector<char>myQueue;
 
 void subset(string seq,int pos){
     if(pos==seq.length()){
-        queue<char>temp(myQueue);
+        vector<char>temp(myQueue);
         while(!temp.empty()){
-            cout<<temp.front()<<" ";
-            temp.pop();
+            cout<<temp.back()<<" ";
+            temp.pop_back();
         }
         cout<<endl;
         return;
     }
     subset(seq,pos+1);
-    myQueue.push(seq[pos]);
+    myQueue.push_back(seq[pos]);
     subset(seq,pos+1);
-    myQueue.pop();
+    myQueue.pop_back();
 }
 
 int main(){
