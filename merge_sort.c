@@ -56,4 +56,3 @@ void merge(int a[],int b[],int c[],int n,int m,int sum){
         k++;
     }
 }
-
